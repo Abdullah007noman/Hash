@@ -40,3 +40,29 @@ int value = ht.get(15);  // Returns 150
 // Remove a key
 ht.remove(15);
 ```
+# Performance Characteristics
+
+Average time complexity:
+
+* Insertion: O(1)
+* Retrieval: O(1)
+* Deletion: O(1)
+
+
+Worst-case time complexity (heavy collisions): O(n)
+
+# Requirements
+
+  * C++ Compiler supporting C++11 or later
+  * Standard C++ Library
+
+# Compilation
+Compile with a C++11 or later compatible compiler:
+```
+g++ -std=c++11 hash_table.cpp -o hash_table
+```
+# Limitations
+
+* Supports only integer keys and values
+* Uses manual memory management
+* Not thread-safe
