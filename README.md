@@ -43,12 +43,12 @@ ht.remove(15);
 
 # Key Methods
 
-```insert(int key, int value)```: Add a new key-value pair
-get(int key): Retrieve value for a given key
-remove(int key): Remove a key-value pair
-print(): Display all elements in the hash table
-getSize(): Get number of elements
-getCapacity(): Get current table capacity
+* ```insert(int key, int value)```: Add a new key-value pair
+* ```get(int key)```: Retrieve value for a given key
+* ```remove(int key)```: Remove a key-value pair
+* ```print()```: Display all elements in the hash table
+* ```getSize()```: Get number of elements
+* ```getCapacity()```: Get current table capacity
 # Performance Characteristics
 
 Average time complexity:
