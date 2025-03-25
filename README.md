@@ -23,3 +23,20 @@ This is a custom hash table implementation in C++ that provides a flexible, dyna
 # Collision Resolution
   * Implements chaining using a custom doubly linked list
   * New elements added at the beginning of the collision chain
+
+## Usage Example
+```
+// Create a hash table
+HashTable ht;
+
+// Insert key-value pairs
+ht.insert(5, 50);
+ht.insert(15, 150);
+ht.insert(25, 250);
+
+// Retrieve a value
+int value = ht.get(15);  // Returns 150
+
+// Remove a key
+ht.remove(15);
+```
