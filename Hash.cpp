@@ -1,5 +1,6 @@
 #include <iostream>
 #include <functional>
+#include <stdexcept>
 
 class HashTable {
 private:
@@ -154,29 +155,61 @@ public:
         throw std::runtime_error("Key not found");
     }
 
+    void print() {
+        std::cout << "Hash Table Contents:" << std::endl;
+        for (int i = 0; i < capacity; i++) {
+            Node* current = table[i];
+            if (current) {
+                std::cout << "Bucket " << i << ": ";
+                while (current) {
+                    std::cout << "(" << current->key << ":" << current->value << ") ";
+                    current = current->next;
+                }
+                std::cout << std::endl;
+            }
+        }
+    }
+
     int getSize() const { return size; }
     int getCapacity() const { return capacity; }
 };
 
 int main() {
+    // Create hash table
     HashTable ht;
 
-    // Insert integer key-value pairs
-    ht.insert(5, 50);
-    ht.insert(15, 150);
-    ht.insert(25, 250);
+    // Large set of numbers to demonstrate functionality
+    int keys[] = {5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 
+                  105, 115, 125, 135, 145, 155, 165, 175, 185, 195};
+    int values[] = {50, 150, 250, 350, 450, 550, 650, 750, 850, 950,
+                    1050, 1150, 1250, 1350, 1450, 1550, 1650, 1750, 1850, 1950};
 
-    // Print size
-    std::cout << "Size of hash table: " << ht.getSize() << std::endl;
+    // Insert multiple elements
+    std::cout << "Inserting elements:" << std::endl;
+    for (int i = 0; i < 20; i++) {
+        ht.insert(keys[i], values[i]);
+        std::cout << "Inserted (" << keys[i] << ":" << values[i] << ")" << std::endl;
+    }
 
-    // Get and print a value
-    std::cout << "Value for key 15: " << ht.get(15) << std::endl;
+    // Print initial size
+    std::cout << "\nSize of hash table: " << ht.getSize() << std::endl;
 
-    // Remove a key
+    // Print the entire hash table
+    ht.print();
+
+    // Retrieve and print a specific value
+    std::cout << "\nValue for key 15: " << ht.get(15) << std::endl;
+
+    // Remove some keys
+    std::cout << "\nRemoving keys 15 and 95:" << std::endl;
     ht.remove(15);
+    ht.remove(95);
 
     // Print new size
     std::cout << "Size after removal: " << ht.getSize() << std::endl;
+
+    // Print updated hash table
+    ht.print();
 
     return 0;
 }
