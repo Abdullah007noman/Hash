@@ -1,6 +1,6 @@
-# Custom Integer Hash Table in C++
+## Custom Integer Hash Table in C++
 This is a custom hash table implementation in C++ that provides a flexible, dynamically resizing data structure for storing integer key-value pairs. The implementation follows specific design constraints and demonstrates advanced data structure techniques.
-## Features
+# Features
   * Integer-only key-value storage
   * Dynamic resizing (growth and shrinkage)
   * Collision resolution using chaining
@@ -8,23 +8,23 @@ This is a custom hash table implementation in C++ that provides a flexible, dyna
   * Implemented using C-style arrays
   * Doubly linked list for collision handling
 
-## Key Characteristics
-# Hash Function
+# Key Characteristics
+## Hash Function
    * Uses multiplication and division method
    * Supports custom hash function injection
    * Provides a default hash function using the golden ratio constant
 
-# Resizing Mechanism
+## Resizing Mechanism
 
 * Grows when table is 75% full (doubles capacity)
 * Shrinks when table is 25% full (halves capacity)
 * Minimum capacity is 16
 * Rehashes all elements during resize operation
-# Collision Resolution
+## Collision Resolution
   * Implements chaining using a custom doubly linked list
   * New elements added at the beginning of the collision chain
 
-## Usage Example
+# Usage Example
 ```
 // Create a hash table
 HashTable ht;
@@ -45,7 +45,7 @@ HashTable ht;
     ht.remove(95);
 ```
 
-# Key Methods
+## Key Methods
 
 * ```insert(int key, int value)```: Add a new key-value pair
 * ```get(int key)```: Retrieve value for a given key
@@ -53,7 +53,7 @@ HashTable ht;
 * ```print()```: Display all elements in the hash table
 * ```getSize()```: Get number of elements
 * ```getCapacity()```: Get current table capacity
-# Performance Characteristics
+## Performance Characteristics
 
 Average time complexity:
 
@@ -64,17 +64,17 @@ Average time complexity:
 
 Worst-case time complexity (heavy collisions): O(n)
 
-# Requirements
+## Requirements
 
   * C++ Compiler supporting C++11 or later
   * Standard C++ Library
 
-# Compilation
+## Compilation
 Compile with a C++11 or later compatible compiler:
 ```
 g++ -std=c++11 hash_table.cpp -o hash_table
 ```
-# Limitations
+## Limitations
 
 * Supports only integer keys and values
 * Uses manual memory management
