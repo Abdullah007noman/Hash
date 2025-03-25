@@ -29,16 +29,20 @@ This is a custom hash table implementation in C++ that provides a flexible, dyna
 // Create a hash table
 HashTable ht;
 
-// Insert key-value pairs
-ht.insert(5, 50);
-ht.insert(15, 150);
-ht.insert(25, 250);
+ // Large set of numbers to demonstrate functionality
+    int keys[] = {5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 
+                  105, 115, 125, 135, 145, 155, 165, 175, 185, 195};
+    int values[] = {50, 150, 250, 350, 450, 550, 650, 750, 850, 950,
+                    1050, 1150, 1250, 1350, 1450, 1550, 1650, 1750, 1850, 1950};
 
-// Retrieve a value
-int value = ht.get(15);  // Returns 150
 
-// Remove a key
-ht.remove(15);
+// Retrieve and print a specific value
+    std::cout << "\nValue for key 15: " << ht.get(15) << std::endl;
+
+ // Remove some keys
+    std::cout << "\nRemoving keys 15 and 95:" << std::endl;
+    ht.remove(15);
+    ht.remove(95);
 ```
 
 # Key Methods
